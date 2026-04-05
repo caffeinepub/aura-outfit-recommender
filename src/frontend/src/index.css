@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap");
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Warm cream page background: #F3E9D8 → oklch(0.927 0.034 68.2) */
+    --background: 0.927 0.034 68.2;
+    /* Deep espresso text: #2B1C17 → oklch(0.225 0.038 42.1) */
+    --foreground: 0.225 0.038 42.1;
+
+    /* Card white: #FFFFFF → oklch(1 0 0) */
+    --card: 1 0 0;
+    --card-foreground: 0.225 0.038 42.1;
+
+    /* Popover */
+    --popover: 1 0 0;
+    --popover-foreground: 0.225 0.038 42.1;
+
+    /* Primary: muted gold #C9A45A → oklch(0.718 0.118 72.5) */
+    --primary: 0.718 0.118 72.5;
+    /* Primary foreground: white */
+    --primary-foreground: 1 0 0;
+
+    /* Secondary: cream panel #FBF6EE → oklch(0.971 0.018 68.4) */
+    --secondary: 0.971 0.018 68.4;
+    --secondary-foreground: 0.225 0.038 42.1;
+
+    /* Muted: warm gray #6E6259 → oklch(0.487 0.026 50.1) */
+    --muted: 0.955 0.018 68.0;
+    --muted-foreground: 0.487 0.026 50.1;
+
+    /* Accent: light sand #E6D8C6 → oklch(0.877 0.032 70.2) */
+    --accent: 0.877 0.032 70.2;
+    --accent-foreground: 0.225 0.038 42.1;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border: light sand #E6D8C6 → oklch(0.877 0.032 70.2) */
+    --border: 0.877 0.032 70.2;
+    --input: 0.877 0.032 70.2;
+    --ring: 0.718 0.118 72.5;
+
+    /* Chart colors */
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.971 0.018 68.4;
+    --sidebar-foreground: 0.225 0.038 42.1;
+    --sidebar-primary: 0.718 0.118 72.5;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.877 0.032 70.2;
+    --sidebar-accent-foreground: 0.225 0.038 42.1;
+    --sidebar-border: 0.877 0.032 70.2;
+    --sidebar-ring: 0.718 0.118 72.5;
+
+    /* Custom tokens */
+    --maroon: 0.392 0.112 10.5; /* #8B3E52 */
+    --gold: 0.718 0.118 72.5; /* #C9A45A */
+    --gold-dark: 0.648 0.122 68.1; /* #B9924A */
+    --espresso: 0.225 0.038 42.1; /* #2B1C17 */
+    --terracotta: 0.512 0.098 42.8; /* #8A5A4A */
+    --warm-sand: 0.877 0.032 70.2; /* #E6D8C6 */
+    --cream: 0.971 0.018 68.4; /* #FBF6EE */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DMSans", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "PlayfairDisplay", "Georgia", serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: "PlayfairDisplay", "Georgia", serif;
+  }
+  .font-sans {
+    font-family: "DMSans", "Inter", system-ui, sans-serif;
+  }
+  .text-maroon {
+    color: oklch(var(--maroon));
+  }
+  .bg-maroon {
+    background-color: oklch(var(--maroon));
+  }
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+  .text-espresso {
+    color: oklch(var(--espresso));
+  }
+  .text-terracotta {
+    color: oklch(var(--terracotta));
+  }
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+  .bg-warm-sand {
+    background-color: oklch(var(--warm-sand));
+  }
+  .border-warm-sand {
+    border-color: oklch(var(--warm-sand));
+  }
+  .shadow-warm {
+    box-shadow: 0 2px 20px 0 rgba(43, 28, 23, 0.08);
+  }
+  .shadow-warm-lg {
+    box-shadow: 0 8px 40px 0 rgba(43, 28, 23, 0.12);
+  }
+}
